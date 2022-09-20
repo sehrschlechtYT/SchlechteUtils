@@ -12,16 +12,13 @@ import java.lang.reflect.Field;
  * @since 1.0
  */
 public abstract class AbstractConfig {
-    private static AbstractConfig instance = null;
 
     public AbstractConfig(YamlDocument configDocument) {
-        instance = this;
-
         load(configDocument);
     }
 
     private void load(YamlDocument configDocument) {
-        for (Field field : instance.getClass().getFields()) {
+        for (Field field : getClass().getFields()) {
             if(field.isAnnotationPresent(ConfigOption.class)) {
                 ConfigOption annotation = field.getAnnotation(ConfigOption.class);
                 String key = annotation.key();
@@ -33,7 +30,7 @@ public abstract class AbstractConfig {
                        debug("Config option " + key + " is not of type " + type.getName() + "!");
                         continue;
                     }
-                    field.set(instance, object);
+                    field.set(this, object);
                 } catch (Exception e) {
                     debug("Could not set config value for key " + key + " to type " + type.getName() + ": " + e.getMessage());
                 }
@@ -44,10 +41,6 @@ public abstract class AbstractConfig {
     private void debug(String message) {
         if(!enableDebugLogging() || getPlugin() == null) return;
         Debug.CONFIG.send(getPlugin(), message);
-    }
-
-    public static AbstractConfig getInstance() {
-        return instance;
     }
 
     protected boolean enableDebugLogging() {
