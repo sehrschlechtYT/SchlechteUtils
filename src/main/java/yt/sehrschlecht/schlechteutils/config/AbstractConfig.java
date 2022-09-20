@@ -11,10 +11,10 @@ import java.lang.reflect.Field;
  * @author sehrschlechtYT | https://github.com/sehrschlechtYT
  * @since 1.0
  */
-public abstract class Config {
-    private static Config instance = null;
+public abstract class AbstractConfig {
+    private static AbstractConfig instance = null;
 
-    public Config(YamlDocument configDocument) {
+    public AbstractConfig(YamlDocument configDocument) {
         instance = this;
 
         load(configDocument);
@@ -46,7 +46,7 @@ public abstract class Config {
         Debug.CONFIG.send(getPlugin(), message);
     }
 
-    public static Config getInstance() {
+    public static AbstractConfig getInstance() {
         return instance;
     }
 
