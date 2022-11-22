@@ -17,7 +17,7 @@ public abstract class AbstractConfig {
         load(configDocument);
     }
 
-    private void load(YamlDocument configDocument) {
+    protected void load(YamlDocument configDocument) {
         for (Field field : getClass().getFields()) {
             if(field.isAnnotationPresent(ConfigOption.class)) {
                 ConfigOption annotation = field.getAnnotation(ConfigOption.class);
@@ -38,7 +38,7 @@ public abstract class AbstractConfig {
         }
     }
 
-    private void debug(String message) {
+    protected void debug(String message) {
         if(!enableDebugLogging() || getPlugin() == null) return;
         Debug.CONFIG.send(getPlugin(), message);
     }
