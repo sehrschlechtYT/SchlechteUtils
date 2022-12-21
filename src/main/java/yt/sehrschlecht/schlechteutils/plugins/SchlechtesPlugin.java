@@ -15,15 +15,15 @@ public abstract class SchlechtesPlugin extends JavaPlugin {
         registerCommands();
     }
 
-    void createConfig() {
+    protected void createConfig() {
 
     };
 
-    void registerListeners() {
+    protected void registerListeners() {
 
     }
 
-    void registerCommands() {
+    protected void registerCommands() {
 
     }
 
