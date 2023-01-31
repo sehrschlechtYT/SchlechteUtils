@@ -8,6 +8,7 @@ import java.lang.annotation.RetentionPolicy;
  * @since 1.0
  */
 @Retention(RetentionPolicy.RUNTIME)
+@Deprecated // Replace with sehrschlechtYT/ClassConfig
 public @interface ConfigOption {
     String key();
     Class<?> type();

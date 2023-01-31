@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
  * @author sehrschlechtYT | https://github.com/sehrschlechtYT
  * @since 1.0
  */
+@Deprecated // Replace with sehrschlechtYT/ClassConfig
 public abstract class AbstractConfig {
 
     public AbstractConfig(YamlDocument configDocument) {
