@@ -14,7 +14,7 @@
     <dependency>
             <groupId>com.github.sehrschlechtYT</groupId>
             <artifactId>SchlechteUtils</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
     </dependency>
 </dependencies>
 ```
@@ -29,6 +29,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.sehrschlechtYT:SchlechteUtils:1.0.5'
+    implementation 'com.github.sehrschlechtYT:SchlechteUtils:1.0.6'
 }
 ```

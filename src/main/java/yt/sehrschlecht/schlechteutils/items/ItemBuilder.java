@@ -159,6 +159,14 @@ public class ItemBuilder {
     }
 
     @NotNull
+    public ItemBuilder setCustomModelData(int data) {
+        ItemMeta meta = getItemMeta();
+        meta.setCustomModelData(data);
+        setItemMeta(meta);
+        return this;
+    }
+
+    @NotNull
     public ItemStack build() {
         return stack;
     }
