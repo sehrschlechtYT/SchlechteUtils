@@ -2,6 +2,7 @@ package yt.sehrschlecht.schlechteutils.data;
 
 /**
  * A pair of two objects
+ *
  * @author sehrschlechtYT | https://github.com/sehrschlechtYT
  * @since 1.0.3
  */
