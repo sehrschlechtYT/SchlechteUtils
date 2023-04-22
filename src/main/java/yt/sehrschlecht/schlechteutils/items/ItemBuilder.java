@@ -99,6 +99,12 @@ public class ItemBuilder {
     }
 
     @NotNull
+    public ItemBuilder setMHFSkull(MHFSkulls mhfSkull) {
+        mhfSkull.apply(stack);
+        return this;
+    }
+
+    @NotNull
     public ItemBuilder setDisplayName(@NotNull String name) {
         ItemMeta meta = getItemMeta();
         meta.setDisplayName(name);
